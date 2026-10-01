@@ -1,49 +1,12 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#4679dd">
-    <title>micro:bit 小車語音遙控器</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <main>
-      <header>
-        <p>MICRO:BIT V2 · SUPER:BIT 2.0</p>
-        <h1>小車語音遙控器</h1>
-        <span>說出方向、時間或距離，也能控制手臂與夾子。</span>
-      </header>
-
-      <section class="card connection">
-        <div><i id="dot"></i><span id="status">尚未連線</span></div>
-        <button id="connect">連接 micro:bit</button>
-      </section>
-
-      <section class="card voice-control-card">
-        <button id="listen" class="voice-button" type="button" disabled>
-          <strong>🎙️</strong><span>按一下說話</span>
-        </button>
-        <p id="heard" aria-live="polite">請先連接 micro:bit</p>
-        <div id="movement" class="movement-state">● 安全待命中</div>
-        <button id="stop" class="emergency" type="button">■ 立即停止</button>
-      </section>
-
-      <section class="card voice-guide">
-        <h2>語音指令範例</h2>
-        <div class="phrase-grid">
-          <span>「前進 1 秒」</span><span>「後退 2 秒」</span><span>「左轉半秒」</span>
-          <span>「右轉 1 秒」</span><span>「前進 50 公分」</span><span>「後退半公尺」</span>
-          <span>「手臂上升」</span><span>「手臂下降」</span><span>「夾子夾住」</span>
-          <span>「夾子打開」</span><span>「停止」</span>
-        </div>
-        <label class="calibration"><span><b>距離校正</b>（小車每秒約走幾公分）</span>
-          <input id="speed" type="number" min="1" max="200" value="25">
-          <small>預設 25 cm/s；距離由時間換算，請依實測結果調整。</small>
-        </label>
-        <p class="safety-note">安全限制：單次行駛最多 5 秒；時間到立即傳送停止。</p>
-      </section>
-    </main>
-    <script src="app.js"></script>
-  </body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4679dd"><title>micro:bit 小車十向遙控器</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><p>MICRO:BIT V2 · SUPER:BIT 2.0</p><h1>小車十向遙控器</h1><span>用按鈕或中文語音，控制麥克納姆輪車的十個方向。</span></header>
+<section class="card connection"><div><i id="dot"></i><span id="status">尚未連線</span></div><button id="connect">連接 micro:bit</button></section>
+<section class="card voice-control-card"><button id="listen" class="voice-button" type="button" disabled><strong>🎙️</strong><span>按一下說話</span></button><p id="heard" aria-live="polite">請先連接 micro:bit</p><div id="movement" class="movement-state">● 安全待命中</div><button id="stop" class="emergency" type="button">■ 立即停止</button></section>
+<section class="card manual-control-card"><div class="section-heading"><h2>手動十方向</h2><span>每次行駛 1 秒</span></div><div class="drive-pad" aria-label="小車方向控制">
+<button class="drive-button diagonal" data-command="Q" data-label="左上斜" disabled><b>↖</b><span>左上斜</span></button><button class="drive-button forward" data-command="W" data-label="前進" disabled><b>↑</b><span>前進</span></button><button class="drive-button diagonal" data-command="E" data-label="右上斜" disabled><b>↗</b><span>右上斜</span></button><button class="drive-button turn" data-command="S" data-label="左轉" disabled><b>↺</b><span>左轉</span></button><button class="drive-button strafe" data-command="A" data-label="向左平移" disabled><b>←</b><span>向左平移</span></button><button class="drive-button strafe" data-command="D" data-label="向右平移" disabled><b>→</b><span>向右平移</span></button><button class="drive-button turn" data-command="J" data-label="右轉" disabled><b>↻</b><span>右轉</span></button><button class="drive-button diagonal" data-command="Z" data-label="左下斜" disabled><b>↙</b><span>左下斜</span></button><button class="drive-button backward" data-command="X" data-label="後退" disabled><b>↓</b><span>後退</span></button><button class="drive-button diagonal" data-command="C" data-label="右下斜" disabled><b>↘</b><span>右下斜</span></button>
+</div></section>
+<section class="card voice-guide"><h2>語音指令範例</h2><div class="phrase-grid"><span>「前進」</span><span>「後退」</span><span>「左轉」</span><span>「右轉」</span><span>「向左平移」</span><span>「向右平移」</span><span>「左上斜」</span><span>「右上斜」</span><span>「左下斜」</span><span>「右下斜」</span><span>「停止」</span></div><p class="safety-note">每句方向語音預設行駛 1 秒；也可以說「前進 2 秒」。安全限制：單次最多 5 秒。</p></section>
+</main><script src="app.js"></script></body></html>
